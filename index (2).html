@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indrakaran Reddy — Fresher | IT Graduate</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0b0b12;--bg2:#111119;--bg3:#18181f;
+  --surface:#1c1c26;--surface2:#222230;
+  --accent:#7c6fff;--accent2:#a78bfa;--accent3:#c4b5fd;
+  --green:#34d399;--amber:#fbbf24;--coral:#f87171;--blue:#60a5fa;
+  --text:#efeffa;--text2:#9d9bb8;--text3:#5e5c7a;
+  --border:rgba(124,111,255,0.14);--border2:rgba(255,255,255,0.07);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
+
+/* ambient */
+.g1,.g2{position:fixed;border-radius:50%;pointer-events:none;z-index:0}
+.g1{width:700px;height:700px;top:-250px;left:-150px;background:radial-gradient(circle,rgba(124,111,255,0.09) 0%,transparent 70%);filter:blur(80px)}
+.g2{width:500px;height:500px;bottom:10%;right:-100px;background:radial-gradient(circle,rgba(96,165,250,0.06) 0%,transparent 70%);filter:blur(80px)}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 5rem;background:rgba(11,11,18,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border2)}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+.nav-logo span{color:var(--accent2)}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:0.88rem;transition:color 0.2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{background:var(--accent)!important;color:#fff!important;padding:0.45rem 1.1rem;border-radius:100px;font-size:0.83rem!important;font-weight:500!important}
+
+/* wrapper & sections */
+.wrap{position:relative;z-index:1}
+section{padding:6rem 5rem;max-width:1160px;margin:0 auto}
+.full-w{max-width:100%;padding:4rem 5rem}
+.full-w .inner{max-width:1160px;margin:0 auto}
+
+/* labels & titles */
+.lbl{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;font-weight:500;color:var(--accent2);text-transform:uppercase;letter-spacing:0.14em;margin-bottom:1rem}
+.lbl::before{content:'';width:22px;height:1px;background:var(--accent2)}
+.sec-title{font-family:'Syne',sans-serif;font-size:clamp(1.9rem,3.5vw,2.9rem);font-weight:800;letter-spacing:-0.04em;color:var(--text);line-height:1.1;margin-bottom:0.9rem}
+.sec-sub{color:var(--text2);font-size:1rem;max-width:500px;line-height:1.8;margin-bottom:3.5rem}
+
+/* ── HERO ── */
+#home{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:7rem;max-width:100%;padding-left:5rem;padding-right:5rem}
+.hero-inner{max-width:1160px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.1fr 0.9fr;gap:4rem;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.22);color:#6ee7b7;font-size:0.75rem;font-weight:500;padding:0.35rem 0.9rem;border-radius:100px;margin-bottom:1.8rem;letter-spacing:0.06em;text-transform:uppercase}
+.hero-badge::before{content:'';width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.hero-name{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,6vw,5.5rem);font-weight:800;line-height:1.0;letter-spacing:-0.04em;color:var(--text);margin-bottom:0.5rem}
+.hero-name .hl{color:var(--accent2)}
+.hero-role{font-family:'Syne',sans-serif;font-size:clamp(0.9rem,1.6vw,1.15rem);font-weight:400;color:var(--text2);margin-bottom:1.8rem;letter-spacing:0.01em}
+.hero-desc{color:var(--text2);font-size:0.97rem;line-height:1.85;margin-bottom:2.5rem}
+.hero-actions{display:flex;gap:0.8rem;flex-wrap:wrap}
+.btn-p{display:inline-flex;align-items:center;gap:0.5rem;background:var(--accent);color:#fff;text-decoration:none;padding:0.8rem 1.8rem;border-radius:100px;font-weight:500;font-size:0.9rem;transition:background 0.2s,transform 0.2s;box-shadow:0 0 28px rgba(124,111,255,0.22)}
+.btn-p:hover{background:var(--accent2);transform:translateY(-2px)}
+.btn-g{display:inline-flex;align-items:center;gap:0.5rem;background:transparent;color:var(--text2);text-decoration:none;padding:0.8rem 1.8rem;border-radius:100px;font-weight:400;font-size:0.9rem;border:1px solid var(--border2);transition:all 0.2s}
+.btn-g:hover{border-color:var(--border);color:var(--text);transform:translateY(-2px)}
+
+/* hero right — identity cards */
+.hero-right{display:flex;flex-direction:column;gap:0.9rem}
+.id-card{background:var(--surface);border:1px solid var(--border2);border-radius:16px;padding:1.1rem 1.4rem;display:flex;align-items:center;gap:1rem;transition:border-color 0.2s,transform 0.2s}
+.id-card:hover{border-color:var(--border);transform:translateX(4px)}
+.id-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.id-icon.purple{background:rgba(124,111,255,0.12)}
+.id-icon.green{background:rgba(52,211,153,0.1)}
+.id-icon.amber{background:rgba(251,191,36,0.1)}
+.id-icon.blue{background:rgba(96,165,250,0.1)}
+.id-icon.coral{background:rgba(248,113,113,0.1)}
+.id-info h4{font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;color:var(--text);margin-bottom:0.1rem}
+.id-info p{font-size:0.77rem;color:var(--text3)}
+
+/* ── STATS ── */
+.stats-strip{background:var(--bg2);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);padding:2.2rem 5rem}
+.stats-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+.stat-item{text-align:center;padding:1rem;background:var(--surface);border-radius:14px;border:1px solid var(--border2)}
+.stat-num{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:800;color:var(--text);letter-spacing:-0.04em;line-height:1;margin-bottom:0.3rem}
+.stat-num span{color:var(--accent2)}
+.stat-label{font-size:0.72rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.1em;line-height:1.4}
+
+/* ── ABOUT / PROFILE ── */
+.profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.about-body p{color:var(--text2);line-height:1.9;margin-bottom:1.1rem;font-size:0.97rem}
+.about-body p strong{color:var(--text);font-weight:500}
+.traits{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;margin-top:1.5rem}
+.trait{background:var(--surface);border:1px solid var(--border2);border-radius:12px;padding:0.8rem 1rem;font-size:0.82rem;color:var(--text2);display:flex;align-items:center;gap:0.6rem;transition:border-color 0.2s}
+.trait:hover{border-color:var(--border);color:var(--text)}
+.trait-dot{width:6px;height:6px;background:var(--accent2);border-radius:50%;flex-shrink:0}
+
+/* timeline (education + experience share this) */
+.timeline{position:relative;padding-left:1.8rem}
+.timeline::before{content:'';position:absolute;left:0;top:4px;bottom:0;width:1px;background:linear-gradient(to bottom,var(--accent),transparent)}
+.tl-item{position:relative;padding-left:1.8rem;margin-bottom:2.2rem}
+.tl-item::before{content:'';position:absolute;left:-2.3rem;top:0.4rem;width:9px;height:9px;background:var(--accent);border-radius:50%;box-shadow:0 0 10px rgba(124,111,255,0.5)}
+.tl-period{font-size:0.72rem;color:var(--accent3);font-weight:500;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.3rem}
+.tl-role{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:0.15rem;letter-spacing:-0.02em}
+.tl-org{font-size:0.85rem;color:var(--text2);margin-bottom:0.7rem}
+.tl-badge{display:inline-block;font-size:0.7rem;font-weight:500;padding:0.2rem 0.6rem;border-radius:100px;margin-bottom:0.7rem}
+.tl-badge.cgpa{background:rgba(52,211,153,0.1);color:#6ee7b7;border:1px solid rgba(52,211,153,0.2)}
+.tl-badge.cert{background:rgba(96,165,250,0.1);color:#93c5fd;border:1px solid rgba(96,165,250,0.2)}
+.tl-points{list-style:none;display:flex;flex-direction:column;gap:0.4rem}
+.tl-points li{display:flex;align-items:flex-start;gap:0.6rem;color:var(--text2);font-size:0.87rem;line-height:1.65}
+.tl-points li::before{content:'▸';color:var(--accent2);flex-shrink:0;margin-top:0.15rem;font-size:0.75rem}
+
+/* ── SKILLS ── */
+.skills-layout{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.sk-group{background:var(--surface);border:1px solid var(--border2);border-radius:18px;padding:1.6rem;transition:border-color 0.2s,transform 0.2s}
+.sk-group:hover{border-color:var(--border);transform:translateY(-3px)}
+.sk-head{display:flex;align-items:center;gap:0.7rem;margin-bottom:1.1rem}
+.sk-ico{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:0.95rem;flex-shrink:0}
+.sk-ico.p{background:rgba(124,111,255,0.12)}
+.sk-ico.g{background:rgba(52,211,153,0.1)}
+.sk-ico.b{background:rgba(96,165,250,0.1)}
+.sk-ico.a{background:rgba(251,191,36,0.1)}
+.sk-ico.c{background:rgba(248,113,113,0.1)}
+.sk-ico.t{background:rgba(167,139,250,0.1)}
+.sk-group h3{font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:0.08em}
+.tags{display:flex;flex-wrap:wrap;gap:0.45rem}
+.tag{background:var(--bg3);color:var(--text2);font-size:0.75rem;padding:0.25rem 0.7rem;border-radius:100px;border:1px solid var(--border2);transition:all 0.2s}
+.tag:hover{background:rgba(124,111,255,0.1);color:var(--accent3);border-color:var(--border)}
+
+/* ── PROJECTS ── */
+.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+.proj-card{background:var(--surface);border:1px solid var(--border2);border-radius:18px;padding:1.7rem;position:relative;overflow:hidden;transition:border-color 0.25s,transform 0.25s,background 0.2s}
+.proj-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+.proj-card:hover{border-color:var(--border);transform:translateY(-4px);background:var(--surface2)}
+.proj-card:hover::after{transform:scaleX(1)}
+.proj-num{font-size:0.68rem;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:0.8rem}
+.proj-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text);letter-spacing:-0.02em;margin-bottom:0.6rem;line-height:1.3}
+.proj-desc{color:var(--text2);font-size:0.87rem;line-height:1.75;margin-bottom:1.2rem}
+.proj-tech{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1rem}
+.tech{background:rgba(124,111,255,0.08);color:var(--accent3);font-size:0.7rem;font-weight:500;padding:0.22rem 0.6rem;border-radius:100px;border:1px solid rgba(124,111,255,0.18)}
+.proj-win{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.78rem;font-weight:500;color:#6ee7b7;background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.18);padding:0.25rem 0.65rem;border-radius:100px}
+
+/* ── ACHIEVEMENTS ── */
+.ach-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+.ach-card{background:var(--surface);border:1px solid var(--border2);border-radius:16px;padding:1.4rem;text-align:center;transition:border-color 0.2s,transform 0.2s}
+.ach-card:hover{border-color:var(--border);transform:translateY(-3px)}
+.ach-ico{font-size:1.8rem;margin-bottom:0.7rem}
+.ach-title{font-family:'Syne',sans-serif;font-size:0.88rem;font-weight:700;color:var(--text);margin-bottom:0.4rem;line-height:1.3}
+.ach-desc{font-size:0.78rem;color:var(--text3);line-height:1.55}
+
+/* ── CONTACT ── */
+#contact{text-align:center}
+.contact-email{font-family:'Syne',sans-serif;font-size:clamp(1.1rem,2.5vw,1.8rem);font-weight:700;color:var(--accent2);display:block;text-decoration:none;margin:2rem auto;transition:color 0.2s;letter-spacing:-0.02em}
+.contact-email:hover{color:var(--accent3)}
+.contact-links{display:flex;justify-content:center;gap:0.9rem;flex-wrap:wrap;margin-top:1rem}
+.c-link{display:inline-flex;align-items:center;gap:0.55rem;background:var(--surface);color:var(--text2);text-decoration:none;padding:0.75rem 1.4rem;border-radius:12px;border:1px solid var(--border2);font-size:0.87rem;transition:all 0.2s}
+.c-link:hover{color:var(--text);border-color:var(--border);transform:translateY(-2px)}
+.c-link svg{flex-shrink:0}
+
+footer{background:var(--bg);border-top:1px solid var(--border2);padding:1.8rem 5rem;display:flex;align-items:center;justify-content:space-between}
+.fc{font-size:0.78rem;color:var(--text3)}
+.fc span{color:var(--accent2)}
+
+/* fade in */
+.fi{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease}
+.fi.vis{opacity:1;transform:none}
+
+/* responsive */
+@media(max-width:960px){
+  nav{padding:1.2rem 2rem}
+  .nav-links{display:none}
+  section{padding:4.5rem 2rem}
+  .full-w{padding:3rem 2rem}
+  .hero-inner{grid-template-columns:1fr;gap:2.5rem}
+  .hero-right{display:none}
+  .stats-inner{grid-template-columns:repeat(3,1fr)}
+  .profile-grid{grid-template-columns:1fr}
+  .skills-layout{grid-template-columns:1fr 1fr}
+  .proj-grid{grid-template-columns:1fr}
+  .ach-grid{grid-template-columns:1fr 1fr}
+  .stats-strip{padding:2rem}
+  footer{flex-direction:column;gap:0.5rem;text-align:center}
+}
+@media(max-width:580px){
+  .skills-layout{grid-template-columns:1fr}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .traits{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="g1"></div>
+<div class="g2"></div>
+
+<nav>
+  <a href="#home" class="nav-logo">IK<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+
+<!-- HERO -->
+<section id="home" style="max-width:100%;padding-left:5rem;padding-right:5rem">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge">Open to Work — Fresher 2025</div>
+      <h1 class="hero-name">Indrakaran<br><span class="hl">Reddy</span></h1>
+      <p class="hero-role">B.Tech IT Graduate · AI/ML · Python · SQL · Web · Data</p>
+      <p class="hero-desc">A motivated fresher with hands-on project experience across AI/ML, Python development, databases, and web. I combine strong academics (8.03 CGPA), real project work, and a champion's mindset — ready to contribute from day one.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-p">See My Work ↓</a>
+        <a href="mailto:indrakaran0708@gmail.com" class="btn-g">Contact Me →</a>
+      </div>
+    </div>
+    <div class="hero-right fi">
+      <div class="id-card">
+        <div class="id-icon purple">🎓</div>
+        <div class="id-info"><h4>B.Tech Information Technology</h4><p>MRCET · 2021–2025 · CGPA 8.03</p></div>
+      </div>
+      <div class="id-card">
+        <div class="id-icon green">🤖</div>
+        <div class="id-info"><h4>AI / ML Projects</h4><p>GenAI, NLP, Predictive Modeling · 5 projects built</p></div>
+      </div>
+      <div class="id-card">
+        <div class="id-icon blue">🐍</div>
+        <div class="id-info"><h4>Python & SQL Developer</h4><p>Scripting, data pipelines, databases</p></div>
+      </div>
+      <div class="id-card">
+        <div class="id-icon amber">🏅</div>
+        <div class="id-info"><h4>National Fencing Champion</h4><p>3× winner — 2018, 2019, 2020</p></div>
+      </div>
+      <div class="id-card">
+        <div class="id-icon coral">💡</div>
+        <div class="id-info"><h4>Hackathon Finalist</h4><p>4th place in a 12-hour hackathon</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-item fi">
+      <div class="stat-num">8.03</div>
+      <div class="stat-label">B.Tech CGPA</div>
+    </div>
+    <div class="stat-item fi">
+      <div class="stat-num">5<span>+</span></div>
+      <div class="stat-label">Projects Built</div>
+    </div>
+    <div class="stat-item fi">
+      <div class="stat-num">8<span>mo</span></div>
+      <div class="stat-label">Internship</div>
+    </div>
+    <div class="stat-item fi">
+      <div class="stat-num">3<span>×</span></div>
+      <div class="stat-label">National Champion</div>
+    </div>
+    <div class="stat-item fi">
+      <div class="stat-num">6<span>+</span></div>
+      <div class="stat-label">Certifications</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="lbl">About Me</div>
+  <h2 class="sec-title">A fresher who builds,<br>not just studies.</h2>
+  <div class="profile-grid">
+    <div class="about-body fi">
+      <p>I'm <strong>Kancharla Indrakaran Reddy</strong>, a 2025 B.Tech graduate in Information Technology from MRCET, Hyderabad. I finished with a <strong>CGPA of 8.03</strong> and spent the final year putting theory into practice — building AI tools, ML models, and data applications.</p>
+      <p>During my 8-month internship at V CUBE Software Solutions, I worked on the full lifecycle of ML projects: data cleaning, model training, evaluation, and deploying usable interfaces. I'm equally comfortable working with <strong>Python, SQL, HTML/CSS</strong>, and core CS concepts like OOP, DBMS, and DSA.</p>
+      <p>What sets me apart: a genuine <strong>problem-solving mindset</strong> trained through years of competitive fencing — where you think fast, adapt, and execute under pressure. I bring the same discipline to software.</p>
+      <p>I'm seeking an entry-level role where I can grow, contribute, and make a real impact — whether that's in AI/ML, data, or general IT/software development.</p>
+      <div class="traits">
+        <div class="trait"><span class="trait-dot"></span>Quick learner</div>
+        <div class="trait"><span class="trait-dot"></span>Team player</div>
+        <div class="trait"><span class="trait-dot"></span>Detail-oriented</div>
+        <div class="trait"><span class="trait-dot"></span>Problem solver</div>
+        <div class="trait"><span class="trait-dot"></span>Strong communicator</div>
+        <div class="trait"><span class="trait-dot"></span>Self-motivated</div>
+      </div>
+    </div>
+    <div class="fi">
+      <div class="lbl" style="margin-bottom:1.5rem">Education & Experience</div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-period">March 2025 – October 2025</div>
+          <div class="tl-role">AI/ML Engineer Intern</div>
+          <div class="tl-org">V CUBE Software Solutions · Hyderabad</div>
+          <ul class="tl-points">
+            <li>Built 4 end-to-end AI/ML projects from data preprocessing to deployment</li>
+            <li>Developed a GenAI Resume Matcher using Gemini API, FAISS &amp; RAG</li>
+            <li>Deployed ML models with GUI interfaces using Tkinter and Gradio</li>
+            <li>Stack: Python, scikit-learn, Pandas, NLTK, SpaCy, SQLite, Git</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <div class="tl-period">2021 – June 2025</div>
+          <div class="tl-role">B.Tech — Information Technology</div>
+          <div class="tl-org">Malla Reddy College of Engineering &amp; Technology (MRCET)</div>
+          <span class="tl-badge cgpa">CGPA: 8.03</span>
+          <ul class="tl-points">
+            <li>Core subjects: OOP, DBMS, DSA, Computer Networks, OS, Software Engineering</li>
+            <li>Electives in Machine Learning, NLP, and AI</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <div class="tl-period">2019 – 2021</div>
+          <div class="tl-role">Intermediate (MPC)</div>
+          <div class="tl-org">Gowthami Junior College</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-period">Class of 2019</div>
+          <div class="tl-role">SSC — Secondary Education</div>
+          <div class="tl-org">MVR High School</div>
+          <span class="tl-badge cgpa">CGPA: 8.0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="full-w" style="background:var(--bg2);max-width:100%">
+  <div class="inner">
+    <div class="lbl">Skills</div>
+    <h2 class="sec-title">What I bring to the table</h2>
+    <p class="sec-sub">A balanced mix of programming, AI/ML, databases, web, tools, and core CS — built through coursework and real projects.</p>
+    <div class="skills-layout">
+      <div class="sk-group fi">
+        <div class="sk-head"><div class="sk-ico p">🐍</div><h3>Programming</h3></div>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">HTML</span><span class="tag">CSS</span>
+        </div>
+      </div>
+      <div class="sk-group fi">
+        <div class="sk-head"><div class="sk-ico g">🧠</div><h3>AI / Machine Learning</h3></div>
+        <div class="tags">
+          <span class="tag">scikit-learn</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">NLTK</span><span class="tag">SpaCy</span><span class="tag">Word2Vec</span>
+        </div>
+      </div>
+      <div class="sk-group fi">
+        <div class="sk-head"><div class="sk-ico t">✨</div><h3>Generative AI</h3></div>
+        <div class="tags">
+          <span class="tag">Google Gemini API</span><span class="tag">FAISS</span><span class="tag">RAG</span><span class="tag">Vector Embeddings</span>
+        </div>
+      </div>
+      <div class="sk-group fi">
+        <div class="sk-head"><div class="sk-ico b">🗄️</div><h3>Databases</h3></div>
+        <div class="tags">
+          <span class="tag">MySQL</span><span class="tag">SQLite</span><span class="tag">Joins &amp; Subqueries</span><span class="tag">Aggregations</span><span class="tag">DBMS concepts</span>
+        </div>
+      </div>
+      <div class="sk-group fi">
+        <div class="sk-head"><div class="sk-ico a">📊</div><h3>Data &amp; Visualization</h3></div>
+        <div class="tags">
+          <span class="tag">Matplotlib</span><span class="tag">Seaborn</span><span class="tag">Gradio</span><span class="tag">Tkinter</span><span class="tag">Jupyter Notebook</span>
+        </div>
+      </div>
+      <div class="sk-group fi">
+        <div class="sk-head"><div class="sk-ico c">⚙️</div><h3>Core CS &amp; Tools</h3></div>
+        <div class="tags">
+          <span class="tag">OOP</span><span class="tag">DSA (Basics)</span><span class="tag">OS concepts</span><span class="tag">Git &amp; GitHub</span><span class="tag">VS Code</span><span class="tag">Linux basics</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="lbl">Projects</div>
+  <h2 class="sec-title">Things I've actually built</h2>
+  <p class="sec-sub">Real, working projects — from AI models to data pipelines — each deployed with a usable interface.</p>
+  <div class="proj-grid">
+
+    <div class="proj-card fi">
+      <div class="proj-num">01 · Generative AI</div>
+      <h3 class="proj-title">AI Resume &amp; Job Description Matcher</h3>
+      <p class="proj-desc">Semantically matches resumes to job descriptions and auto-generates personalized cover letters using Google Gemini and FAISS vector search. Built a full RAG pipeline with a Gradio UI.</p>
+      <div class="proj-tech">
+        <span class="tech">Python</span><span class="tech">Gemini API</span><span class="tech">FAISS</span><span class="tech">RAG</span><span class="tech">Gradio</span><span class="tech">NLTK</span>
+      </div>
+    </div>
+
+    <div class="proj-card fi">
+      <div class="proj-num">02 · Machine Learning</div>
+      <h3 class="proj-title">Loan Default Prediction</h3>
+      <p class="proj-desc">A binary classification model trained on Kaggle financial data to predict loan defaults. Includes complete preprocessing pipeline and a Tkinter desktop GUI for real end-user interaction.</p>
+      <div class="proj-tech">
+        <span class="tech">Python</span><span class="tech">scikit-learn</span><span class="tech">Pandas</span><span class="tech">Tkinter</span><span class="tech">Logistic Regression</span>
+      </div>
+    </div>
+
+    <div class="proj-card fi">
+      <div class="proj-num">03 · NLP</div>
+      <h3 class="proj-title">Legal Document Clause Extractor</h3>
+      <p class="proj-desc">NLP system that identifies and classifies legal clauses from contracts using the CUAD dataset. Combines rule-based extraction with named entity recognition via NLTK and SpaCy.</p>
+      <div class="proj-tech">
+        <span class="tech">Python</span><span class="tech">NLTK</span><span class="tech">SpaCy</span><span class="tech">CUAD Dataset</span><span class="tech">NER</span>
+      </div>
+    </div>
+
+    <div class="proj-card fi">
+      <div class="proj-num">04 · NLP · Education</div>
+      <h3 class="proj-title">Automated Answer Script Evaluator</h3>
+      <p class="proj-desc">Automatically grades descriptive answers by computing cosine similarity against model answers using Word2Vec. Improved manual grading efficiency by approximately 40%.</p>
+      <div class="proj-tech">
+        <span class="tech">Python</span><span class="tech">Word2Vec</span><span class="tech">Cosine Similarity</span><span class="tech">NLP</span>
+      </div>
+      <div style="margin-top:0.9rem"><span class="proj-win">↑ ~40% efficiency gain</span></div>
+    </div>
+
+    <div class="proj-card fi">
+      <div class="proj-num">05 · Machine Learning</div>
+      <h3 class="proj-title">Auto MPG Fuel Efficiency Predictor</h3>
+      <p class="proj-desc">Compared Linear Regression and Random Forest models to predict vehicle miles-per-gallon. Focused on feature engineering, model evaluation (MSE, R²), and interpreting results.</p>
+      <div class="proj-tech">
+        <span class="tech">Python</span><span class="tech">scikit-learn</span><span class="tech">Linear Regression</span><span class="tech">Random Forest</span><span class="tech">R² / MSE</span>
+      </div>
+    </div>
+
+    <div class="proj-card fi" style="background:rgba(124,111,255,0.04);border-color:rgba(124,111,255,0.18)">
+      <div class="proj-num">Currently Learning</div>
+      <h3 class="proj-title">Deep Learning &amp; CNNs</h3>
+      <p class="proj-desc">Actively exploring convolutional neural networks and deep learning architectures for image recognition and classification tasks. Building toward computer vision projects.</p>
+      <div class="proj-tech">
+        <span class="tech">Deep Learning</span><span class="tech">CNNs</span><span class="tech">Computer Vision</span><span class="tech">TensorFlow / Keras</span>
+      </div>
+      <div style="margin-top:0.9rem"><span class="proj-win">🔥 In progress</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" style="padding-top:0">
+  <div class="lbl">Achievements &amp; Beyond</div>
+  <h2 class="sec-title">More than just code</h2>
+  <p class="sec-sub">Academics, sports, competitions, and certifications — a well-rounded profile built over four years.</p>
+  <div class="ach-grid fi">
+    <div class="ach-card">
+      <div class="ach-ico">🥇</div>
+      <div class="ach-title">National Fencing Champion</div>
+      <div class="ach-desc">Won 3 consecutive National-level championships — 2018, 2019, 2020. Discipline and focus under pressure.</div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-ico">💡</div>
+      <div class="ach-title">Hackathon — 4th Place</div>
+      <div class="ach-desc">Secured 4th in a 12-hour hackathon. Demonstrated rapid problem-solving and effective teamwork.</div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-ico">📜</div>
+      <div class="ach-title">AWS Solutions Architecture</div>
+      <div class="ach-desc">Completed AWS APAC Solutions Architecture Job Simulation via Forage. Cloud fundamentals certified.</div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-ico">🎯</div>
+      <div class="ach-title">Platform Certifications</div>
+      <div class="ach-desc">Certified in Python, SQL, Machine Learning, and Networking via Cisco, Great Learning, and Forage.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="full-w" style="background:var(--bg2);max-width:100%;text-align:center">
+  <div class="inner" style="max-width:660px">
+    <div class="lbl" style="justify-content:center">Get in Touch</div>
+    <h2 class="sec-title">Let's connect.</h2>
+    <p class="sec-sub" style="max-width:100%;margin-bottom:0;text-align:center">I'm actively looking for full-time roles in AI/ML, data, software, or IT — any opportunity where I can learn fast and contribute meaningfully. Let's talk.</p>
+    <a href="mailto:indrakaran0708@gmail.com" class="contact-email">indrakaran0708@gmail.com</a>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/indrakaran07" target="_blank" class="c-link">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/Karanhub07" target="_blank" class="c-link">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub — Karanhub07
+      </a>
+      <a href="tel:+918074543877" class="c-link">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +91 8074543877
+      </a>
+      <a href="#" class="c-link">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Hyderabad, India
+      </a>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <span class="fc">© 2025 Kancharla Indrakaran Reddy · All rights reserved</span>
+  <span class="fc">Built with <span>♥</span> · Fresher · Open to Work</span>
+</footer>
+
+<script>
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}
+  })
+},{threshold:0.08});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+const grids=['.stats-inner','.skills-layout','.proj-grid','.ach-grid','.traits','.hero-right'];
+grids.forEach(sel=>{
+  const p=document.querySelector(sel);
+  if(!p)return;
+  p.querySelectorAll('.fi').forEach((c,i)=>c.style.transitionDelay=`${i*0.07}s`);
+});
+</script>
+</body>
+</html>
